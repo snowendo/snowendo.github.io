@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>遠藤政樹 — ライター・スチールカメラマン</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600;700&family=DM+Sans:wght@300;400;500&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#1A1A18;--paper:#F7F5F0;--rule:#D8D4CC;--red:#B5261E;
+  --dim:#7A776F;--card-bg:#FFFFFF;
+  --serif:'Noto Serif JP','Times New Roman',serif;
+  --display:'Playfair Display','Georgia',serif;
+  --sans:'DM Sans',system-ui,sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-weight:300;line-height:1.7;overflow-x:hidden}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:var(--ink);color:var(--paper);
+  display:flex;justify-content:space-between;align-items:center;padding:.9rem 2.5rem;
+  border-bottom:3px solid var(--red);}
+.nav-name{font-family:var(--serif);font-size:1rem;font-weight:600;letter-spacing:.06em;color:var(--paper);text-decoration:none}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(247,245,240,.65);text-decoration:none;transition:color .25s}
+.nav-links a:hover{color:var(--paper)}
+
+/* HERO */
+.hero{border-bottom:1px solid var(--rule);padding:5rem 2.5rem 4rem;max-width:1200px;margin:0 auto;}
+.hero-kicker{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--red);margin-bottom:1.2rem;
+  display:flex;align-items:center;gap:.75rem;}
+.hero-kicker::before{content:'';display:block;width:2rem;height:1px;background:var(--red)}
+.hero-title{font-family:var(--serif);font-size:clamp(3rem,7.5vw,6.5rem);font-weight:700;line-height:1.0;letter-spacing:-.02em;margin-bottom:1.8rem;}
+.hero-title span{color:var(--red)}
+.hero-desc{max-width:620px;font-size:1rem;color:var(--dim);line-height:1.85;
+  border-left:2px solid var(--rule);padding-left:1.2rem;margin-bottom:2rem;}
+
+/* Page nav buttons */
+.hero-page-nav{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:2.5rem}
+.page-nav-btn{
+  display:flex;align-items:center;gap:.75rem;
+  border:1px solid var(--rule);background:var(--card-bg);
+  padding:.75rem 1.4rem;
+  color:var(--ink);text-decoration:none;
+  transition:border-color .25s,background .25s,transform .2s,box-shadow .25s;
+  font-family:var(--sans);
+}
+.page-nav-btn:hover{border-color:var(--red);background:#fff;transform:translateY(-2px);box-shadow:0 6px 20px rgba(26,26,24,.08);}
+.page-nav-btn:hover .pnb-arrow{transform:translateX(3px)}
+.pnb-icon{font-size:1.1rem;line-height:1;color:var(--red);flex-shrink:0;}
+.pnb-en{display:block;font-size:.78rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);line-height:1.2;}
+.pnb-ja{display:block;font-size:.65rem;letter-spacing:.04em;color:var(--dim);margin-top:.15rem;line-height:1;}
+.pnb-arrow{font-size:.75rem;color:var(--red);margin-left:.25rem;transition:transform .25s;flex-shrink:0;}
+
+/* SECTION */
+.section{padding:5rem 2.5rem;max-width:1200px;margin:0 auto}
+.section-border{border-bottom:1px solid var(--rule)}
+.sec-header{display:flex;align-items:baseline;gap:1.5rem;border-bottom:2px solid var(--ink);padding-bottom:.6rem;margin-bottom:3rem;}
+.sec-label{font-family:var(--serif);font-size:1.5rem;font-weight:600;letter-spacing:.02em}
+.sec-en{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--dim)}
+
+/* PROFILE */
+.profile-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+.profile-text h3{font-family:var(--serif);font-size:1.15rem;font-weight:600;margin-bottom:.75rem;margin-top:1.8rem;padding-bottom:.3rem;border-bottom:1px solid var(--rule)}
+.profile-text h3:first-child{margin-top:0}
+.profile-text p,.profile-text li{font-size:.95rem;color:var(--dim);line-height:1.9}
+.profile-text ul{padding-left:1.2rem;margin-top:.4rem}
+.profile-text li{margin-bottom:.2rem}
+.profile-media-list{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.6rem}
+.media-pill{font-size:.72rem;letter-spacing:.06em;background:var(--ink);color:var(--paper);padding:.28rem .75rem;}
+.profile-career{border-left:2px solid var(--red);padding-left:1.5rem}
+.career-item{margin-bottom:1.8rem;position:relative}
+.career-item::before{content:'';position:absolute;left:-1.65rem;top:.45rem;width:.5rem;height:.5rem;background:var(--red);border-radius:50%}
+.career-year{font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--red);margin-bottom:.2rem}
+.career-text{font-size:.9rem;color:var(--dim);line-height:1.8}
+.genre-note{font-size:.85rem;color:var(--dim);margin-top:1rem;font-style:italic;line-height:1.8}
+.profile-note{font-size:.9rem;color:var(--dim);line-height:1.85;margin-top:.75rem}
+
+/* WORKS — filter */
+.filter-bar{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2.5rem}
+.filter-btn{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;
+  border:1px solid var(--rule);background:transparent;padding:.4rem 1rem;cursor:pointer;
+  color:var(--dim);transition:all .2s;font-family:var(--sans);}
+.filter-btn:hover,.filter-btn.active{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+
+/* WORKS — grid */
+.works-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+.work-card{background:var(--card-bg);border:1px solid var(--rule);overflow:hidden;
+  transition:transform .3s,box-shadow .3s;cursor:pointer;text-decoration:none;color:inherit;display:block;}
+.work-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(26,26,24,.1)}
+.work-card.hidden{display:none}
+
+/* Official */
+.official-card{border-left:3px solid var(--red);background:#FFF8F7;}
+.official-card:hover{box-shadow:0 12px 32px rgba(181,38,30,.12)}
+.official-badge{position:absolute;top:.75rem;left:.75rem;z-index:2;
+  background:var(--red);color:#fff;font-size:.62rem;letter-spacing:.14em;
+  text-transform:uppercase;padding:.22rem .65rem;}
+
+/* Divider */
+.works-divider{grid-column:1/-1;display:flex;align-items:center;gap:1rem;padding:.5rem 0;margin:.5rem 0;}
+.works-divider-line{flex:1;height:1px;background:var(--rule)}
+.works-divider-label{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--dim);white-space:nowrap;}
+
+/* Card parts */
+.work-img{width:100%;aspect-ratio:3/1;overflow:hidden;position:relative;
+  background:linear-gradient(120deg,#e4e0d8,#cec9bf);display:flex;align-items:center;justify-content:center;}
+.work-img-label{font-family:var(--serif);font-size:.75rem;font-weight:600;letter-spacing:.25em;
+  text-transform:uppercase;color:rgba(26,26,24,.18);pointer-events:none;user-select:none;}
+.work-body{padding:.9rem 1.1rem .7rem}
+.work-tag{font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin-bottom:.35rem;}
+.work-title{font-family:var(--serif);font-size:.93rem;font-weight:600;line-height:1.45;margin-bottom:.5rem;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+.work-footer{display:flex;justify-content:space-between;align-items:center;
+  padding:.55rem 1.1rem;border-top:1px solid var(--rule);background:rgba(0,0,0,.01);}
+.work-type{font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--dim)}
+.work-arrow{font-size:.75rem;color:var(--red);opacity:0;transition:opacity .25s,transform .25s;transform:translateX(-4px)}
+.work-card:hover .work-arrow{opacity:1;transform:translateX(0)}
+
+@media(max-width:900px){.works-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:500px){.works-grid{grid-template-columns:1fr}}
+
+/* SKILLS */
+.skills-wrap{display:grid;grid-template-columns:1fr 1fr;gap:5rem}
+.skill-group{margin-bottom:2.5rem}
+.skill-group-title{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);
+  margin-bottom:1rem;padding-bottom:.4rem;border-bottom:1px solid var(--rule);}
+.skill-item{display:flex;justify-content:space-between;align-items:center;padding:.55rem 0;border-bottom:1px solid rgba(216,212,204,.5)}
+.skill-name{font-size:.88rem;color:var(--ink)}
+.skill-yrs{font-size:.72rem;letter-spacing:.08em;color:var(--dim)}
+.tag-cloud{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1rem}
+.tag{font-size:.75rem;border:1px solid var(--rule);padding:.3rem .8rem;color:var(--dim)}
+
+/* CONTACT */
+.contact-inner{max-width:700px}
+.contact-inner p{font-size:1rem;color:var(--dim);margin-bottom:2rem;line-height:1.9}
+.contact-email{display:inline-block;font-family:var(--display);font-size:clamp(1.4rem,3.5vw,2.6rem);
+  font-style:italic;font-weight:400;color:var(--ink);text-decoration:none;
+  border-bottom:2px solid var(--ink);padding-bottom:.2rem;transition:color .25s,border-color .25s;margin-bottom:2rem;}
+.contact-email:hover{color:var(--red);border-color:var(--red)}
+.contact-row{display:flex;gap:2.5rem;flex-wrap:wrap;margin-top:1.5rem}
+.contact-link{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);text-decoration:none;
+  border-bottom:1px solid transparent;padding-bottom:2px;transition:all .25s;}
+.contact-link:hover{color:var(--red);border-color:var(--red)}
+
+/* FOOTER */
+footer{background:var(--ink);color:var(--paper);padding:2rem 2.5rem;
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+.footer-name{font-family:var(--serif);font-size:.9rem;font-weight:600}
+.footer-copy{font-size:.72rem;letter-spacing:.08em;color:rgba(247,245,240,.45)}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .8s ease,transform .8s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .profile-grid,.skills-wrap{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  nav{padding:.8rem 1.2rem}
+  .hero,.section{padding-left:1.2rem;padding-right:1.2rem}
+  .nav-links{gap:1rem}
+}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-name" href="#">遠藤 政樹</a>
+  <ul class="nav-links">
+    <li><a href="#works">実績</a></li>
+    <li><a href="#about">プロフィール</a></li>
+    <li><a href="#skills">スキル</a></li>
+    <li><a href="#contact">連絡先</a></li>
+  </ul>
+</nav>
+
+<div style="border-bottom:1px solid var(--rule)">
+<div class="hero">
+  <p class="hero-kicker">Writer &amp; Photographer</p>
+  <h1 class="hero-title">遠藤<span>政樹</span></h1>
+  <p class="hero-desc">
+    編集プロダクションを経て独立。著名人インタビュー・ライブレポート・イベント取材・コラム・SEO記事などを行うフリーランスライター兼スチールカメラマン。硬い文面から砕けた文面まで、クライアント様のニーズに合わせて幅広く対応可能です。イベント取材の速報記事に関しては基本的に終了後、1時間以内に納品します。
+  </p>
+  <nav class="hero-page-nav">
+    <a class="page-nav-btn" href="#works">
+      <span class="pnb-icon">✦</span>
+      <span class="pnb-text"><span class="pnb-en">Works</span><span class="pnb-ja">制作実績</span></span>
+      <span class="pnb-arrow">→</span>
+    </a>
+    <a class="page-nav-btn" href="#about">
+      <span class="pnb-icon">◈</span>
+      <span class="pnb-text"><span class="pnb-en">About</span><span class="pnb-ja">プロフィール</span></span>
+      <span class="pnb-arrow">→</span>
+    </a>
+    <a class="page-nav-btn" href="#skills">
+      <span class="pnb-icon">◇</span>
+      <span class="pnb-text"><span class="pnb-en">Skills</span><span class="pnb-ja">経験・スキル</span></span>
+      <span class="pnb-arrow">→</span>
+    </a>
+    <a class="page-nav-btn" href="#contact">
+      <span class="pnb-icon">✉</span>
+      <span class="pnb-text"><span class="pnb-en">Contact</span><span class="pnb-ja">お問い合わせ</span></span>
+      <span class="pnb-arrow">→</span>
+    </a>
+  </nav>
+</div>
+</div>
+
+<!-- WORKS -->
+<section id="works" class="section section-border">
+  <div class="sec-header reveal">
+    <span class="sec-label">制作実績</span>
+    <span class="sec-en">Works</span>
+  </div>
+  <div class="filter-bar reveal">
+    <button class="filter-btn active" data-filter="all">すべて</button>
+    <button class="filter-btn" data-filter="interview">インタビュー</button>
+    <button class="filter-btn" data-filter="live">ライブレポ</button>
+    <button class="filter-btn" data-filter="event">イベント取材</button>
+    <button class="filter-btn" data-filter="special">特集</button>
+    <button class="filter-btn" data-filter="media">オウンドメディア</button>
+  </div>
+
+  <div class="works-grid">
+
+    <!-- ═══ OFFICIAL ═══ -->
+    <a class="work-card official-card reveal" href="https://news.kingrecords.co.jp/2026/01/50333/" target="_blank" rel="noopener" data-cat="live" data-official="true">
+      <div class="work-img">
+        <div class="official-badge">Official</div>
+        <span class="work-img-label">Live Report</span>
+      </div>
+      <div class="work-body">
+        <p class="work-tag">オフィシャルライブレポート — King Records</p>
+        <p class="work-title">森口博子 40年の感謝と愛を歌の花束に――"全方位型コンサート"で示したエンターテイナーとしての真髄</p>
+      </div>
+      <div class="work-footer"><span class="work-type">取材・執筆</span><span class="work-arrow">→</span></div>
+    </a>
+
+    <a class="work-card official-card reveal" href="https://news.kingrecords.co.jp/2026/05/54232/" target="_blank" rel="noopener" data-cat="live" data-official="true">
+      <div class="work-img">
+        <div class="official-badge">Official</div>
+        <span class="work-img-label">Live Report</span>
+      </div>
+      <div class="work-body">
+        <p class="work-tag">オフィシャルライブレポート — King Records</p>
+        <p class="work-title">40周年ツアー「第二章」完結 武部聡志との魂を抱きしめる至高のアンサンブルで魅せた、歌声とピアノだけの"真剣勝負"</p>
+      </div>
+      <div class="work-footer"><span class="work-type">取材・執筆</span><span class="work-arrow">→</span></div>
+    </a>
+
+    <a class="work-card official-card reveal" href="https://news.kingrecords.co.jp/2023/06/17188/" target="_blank" rel="noopener" data-cat="live" data-official="true">
+      <div class="work-img">
+        <div class="official-badge">Official</div>
+        <span class="work-img-label">Live Report</span>
+      </div>
+      <div class="work-body">
+        <p class="work-tag">オフィシャルライブレポート — King Records</p>
+        <p class="work-title">森口博子、アニソンへの感謝と愛を込めたコンサート"ANISON NIGHT"開催／マーティ・フリードマンとのセッションで熱狂させた公演をレポート</p>
+      </div>
+      <div class="work-footer"><span class="work-type">取材・執筆</span><span class="work-arrow">→</span></div>
+    </a>
+
+    <a class="work-card official-card reveal" href="https://redon-official.jp/news/ultra-interview/" target="_blank" rel="noopener" data-cat="interview" data-official="true">
+      <div class="work-img">
+        <div class="official-badge">Official</div>
+        <span class="work-img-label">Interview</span>
+      </div>
+      <div class="work-body">
+        <p class="work-tag">オフィシャルインタビュー — redon</p>
+        <p class="work-title">北山宏光(HIROMITSU KITAYAMA) New Single『ULTRA』オフィシャルインタビュー公開！</p>
+      </div>
+      <div class="work-footer"><span class="work-type">取材・執筆</span><span class="work-arrow">→</span></div>
+    </a>
+
+    <a class="work-card official-card reveal" href="https://www.toho-ent.co.jp/event_reports/105921" target="_blank" rel="noopener" data-cat="live" data-official="true">
+      <div class="work-img">
+        <div class="official-badge">Official</div>
+        <span class="work-img-label">Live Report</span>
+      </div>
+      <div class="work-body">
+        <p class="work-tag">オフィシャルレポート — 東宝芸能</p>
+        <p class="work-title">上白石萌音 朗読劇「メメント・モリ」オフィシャルレポート</p>
+      </div>
+      <div class="work-footer"><span class="work-type">取材・執筆</span><span class="work-arrow">→</span></div>
+    </a>
+
+    <!-- ═══ DIVIDER ═══ -->
+    <div class="works-divider">
+      <span class="works-divider-line"></span>
+      <span class="works-divider-label">掲載記事一覧</span>
+      <span class="works-divider-line"></span>
+    </div>
+
+    <!-- ═══ OTHER WORKS（新しい順） ═══ -->
+    <a class="work-card reveal" href="https://www.oricon.co.jp/news/2460865/" target="_blank" rel="noopener" data-cat="interview">
+      <div class="work-img">
+        
+        <span class="work-img-label">Interview</span>
+      </div>
+      <div class="work-body">
+        <p class="work-tag">インタビュー — ORICON NEWS</p>
+        <p class="work-title">田原俊彦、若き自分にライバル心「あれには勝てないけど負けたくない」 ジム通いせず保つ体型もアイドルとしての自負</p>
+      </div>
+      <div class="work-footer"><span class="work-type">取材・執筆</span><span class="work-arrow">→</span></div>
+    </a>
+
+    <a class="work-card reveal" href="https://mantan-web.jp/article/20260613dog00m200008000a.html" target="_blank" rel="noopener" data-cat="event">
+      <div class="work-img">
+        
+        <span class="work-img-label">Event</span>
+      </div>
+      <div class="work-body">
+        <p class="work-tag">イベント取材 — MANTAN WEB</p>
+        <p class="work-title">MUSIC AWARDS JAPAN 2026：藤井風、キンプリ、FRUITS ZIPPER、M！LKら豪華アーティスト レッドカーペット競演 ミセスもサプライズ登場</p>
+      </div>
+      <div class="work-footer"><span class="work-type">取材・執筆・撮影</span><span class="work-arrow">→</span></div>
+    </a>
+
+    <a class="work-card reveal" href="https://mantan-web.jp/article/20260605dog00m200099000a.html" target="_blank" rel="noopener" data-cat="interview">
+      <div class="work-img">
+        
+        <span class="work-img-label">Interview</span>
+      </div>
+      <div class="work-body">
+        <p class="work-tag">インタビュー・撮影 — MANTAN WEB</p>
+        <p class="work-title">フォルティクス：すべての特撮ファンに捧ぐ 鈴木福×濱田龍臣×武田玲奈×坂本浩一監督が新作特撮に込めた思い</p>
+      </div>
+      <div class="work-footer"><span class="work-type">取材・執筆・撮影</span><span class="work-arrow">→</span></div>
+    </a>
+
+    <a class="work-card reveal" href="https://mantan-web.jp/article/20260529dog00m200023000a.html" target="_blank" rel="noopener" data-cat="event">
+      <div class="work-img">
+        
+        <span class="work-img-label">Event</span>
+      </div>
+      <div class="work-body">
+        <p class="work-tag">イベント取材 — MANTAN WEB</p>
+        <p class="work-title">元乃木坂46能條愛未：中村橋之助と挙式・披露宴 神前式で夫婦の実感 白無垢姿を褒められ「もっと言ってよ」とおねだりも</p>
+      </div>
+      <div class="work-footer"><span class="work-type">取材・執筆・撮影</span><span class="work-arrow">→</span></div>
+    </a>
+
+    <a class="work-card reveal" href="https://mantan-web.jp/article/20260512dog00m200075000a.html" target="_blank" rel="noopener" data-cat="interview">
+      <div class="work-img">
+        
+        <span class="work-img-label">Interview</span>
+      </div>
+      <div class="work-body">
+        <p class="work-tag">インタビュー・撮影 — MANTAN WEB</p>
+        <p class="work-title">伊藤健太郎：二面性ある役に感じた難しさと醍醐味 30代見据えた変化も</p>
+      </div>
+      <div class="work-footer"><span class="work-type">取材・執筆・撮影</span><span class="work-arrow">→</span></div>
+    </a>
+
+    <a class="work-card reveal" href="https://mainichikirei.jp/article/20260502dog00m100010000a.html" target="_blank" rel="noopener" data-cat="event">
+      <div class="work-img">
+        
+        <span class="work-img-label">Event</span>
+      </div>
+      <div class="work-body">
+        <p class="work-tag">イベント取材 — 毎日キレイ</p>
+        <p class="work-title">宮沢りえ：北村匠海との親子役に自信「心を澄ませて集中して楽しんでいただけたら」 横浜国際映画祭レッドカーペット</p>
+      </div>
+      <div class="work-footer"><span class="work-type">取材・執筆</span><span class="work-arrow">→</span></div>
+    </a>
+
+    <a class="work-card reveal" href="https://mantan-web.jp/article/20260420dog00m200075000a.html" target="_blank" rel="noopener" data-cat="interview">
+      <div class="work-img">
+        
+        <span class="work-img-label">Interview</span>
+      </div>
+      <div class="work-body">
+        <p class="work-tag">インタビュー・撮影 — MANTAN WEB</p>
+        <p class="work-title">井ノ原快彦：有働由美子と「あさイチ」コンビ"復活"に「ブランク感じなかった」</p>
+      </div>
+      <div class="work-footer"><span class="work-type">取材・執筆・撮影</span><span class="work-arrow">→</span></div>
+    </a>
+
+    <a class="work-card reveal" href="https://mantan-web.jp/article/20260416dog00m200047000a.html" target="_blank" rel="noopener" data-cat="interview">
+      <div class="work-img">
+        
+        <span class="work-img-label">Interview</span>
+      </div>
+      <div class="work-body">
+        <p class="work-tag">インタビュー・撮影 — MANTAN WEB</p>
+        <p class="work-title">要潤：「当時は現場に行くのが嫌でした笑」 賀集利樹と「仮面ライダーアギト」の思い出語る</p>
+      </div>
+      <div class="work-footer"><span class="work-type">取材・執筆・撮影</span><span class="work-arrow">→</span></div>
+    </a>
+
+    <a class="work-card reveal" href="https://mantan-web.jp/article/20260405dog00m200016000a.html" target="_blank" rel="noopener" data-cat="event">
+      <div class="work-img">
+        
+        <span class="work-img-label">Event</span>
+      </div>
+      <div class="work-body">
+        <p class="work-tag">イベント取材 — MANTAN WEB</p>
+        <p class="work-title">有村架純：車いすラグビーは「涙なしで見られない」 「GIFT」第1話時点ですでに感動「泣けてきた」</p>
+      </div>
+      <div class="work-footer"><span class="work-type">取材・執筆・撮影</span><span class="work-arrow">→</span></div>
+    </a>
+
+    <a class="work-card reveal" href="https://mantan-web.jp/article/20260404dog00m200010000a.html" target="_blank" rel="noopener" data-cat="event">
+      <div class="work-img">
+        
+        <span class="work-img-label">Event</span>
+      </div>
+      <div class="work-body">
+        <p class="work-tag">イベント取材 — MANTAN WEB</p>
+        <p class="work-title">松山ケンイチ：パティシエから鮨アカデミー講師に"転身"「せりふがしゃべれなくなったら鮨ケーキ屋に」</p>
+      </div>
+      <div class="work-footer"><span class="work-type">取材・執筆・撮影</span><span class="work-arrow">→</span></div>
+    </a>
+
+    <a class="work-card reveal" href="https://mantan-web.jp/article/20260331dog00m200053000a.html" target="_blank" rel="noopener" data-cat="event">
+      <div class="work-img">
+        
+        <span class="work-img-label">Event</span>
+      </div>
+      <div class="work-body">
+        <p class="work-tag">イベント取材 — MANTAN WEB</p>
+        <p class="work-title">杏：ドラマ撮影でフィンランドに3カ月 「子供3人、犬2匹」の家族も連れて「いつかまた住みたい」</p>
+      </div>
+      <div class="work-footer"><span class="work-type">取材・執筆・撮影</span><span class="work-arrow">→</span></div>
+    </a>
+
+    <a class="work-card reveal" href="https://mantan-web.jp/article/20260316dog00m200066000a.html" target="_blank" rel="noopener" data-cat="interview">
+      <div class="work-img">
+        
+        <span class="work-img-label">Interview</span>
+      </div>
+      <div class="work-body">
+        <p class="work-tag">インタビュー — MANTAN WEB</p>
+        <p class="work-title">杏：フィンランドでの撮影で得た課題と学び 撮影スタイルに感じたそれぞれの良さは</p>
+      </div>
+      <div class="work-footer"><span class="work-type">取材・執筆</span><span class="work-arrow">→</span></div>
+    </a>
+
+    <a class="work-card reveal" href="https://mantan-web.jp/article/20260309dog00m200048000a.html" target="_blank" rel="noopener" data-cat="interview">
+      <div class="work-img">
+        
+        <span class="work-img-label">Interview</span>
+      </div>
+      <div class="work-body">
+        <p class="work-tag">インタビュー・撮影 — MANTAN WEB</p>
+        <p class="work-title">要潤："仮面ライダー俳優"の肩書は「最高に光栄」 「『アギト』は間違いなく代表作」</p>
+      </div>
+      <div class="work-footer"><span class="work-type">取材・執筆・撮影</span><span class="work-arrow">→</span></div>
+    </a>
+
+    <a class="work-card reveal" href="https://mantan-web.jp/article/20260307dog00m200000000a.html" target="_blank" rel="noopener" data-cat="event">
+      <div class="work-img">
+        
+        <span class="work-img-label">Event</span>
+      </div>
+      <div class="work-body">
+        <p class="work-tag">イベント取材 — MANTAN WEB</p>
+        <p class="work-title">なにわ男子・大西流星：大切にしている言葉は「全力でのんき」 本番直前もtimelesz原嘉孝と"恋人つなぎ"でリラックス</p>
+      </div>
+      <div class="work-footer"><span class="work-type">取材・執筆・撮影</span><span class="work-arrow">→</span></div>
+    </a>
+
+    <a class="work-card reveal" href="https://mantan-web.jp/article/20260213dog00m200033000a.html" target="_blank" rel="noopener" data-cat="interview">
+      <div class="work-img">
+        
+        <span class="work-img-label">Interview</span>
+      </div>
+      <div class="work-body">
+        <p class="work-tag">インタビュー — MANTAN WEB</p>
+        <p class="work-title">北方謙三 水滸伝：織田裕二×反町隆史×亀梨和也が語る妥協なき撮影の裏側「美術館に入れる」ほどのクオリティー</p>
+      </div>
+      <div class="work-footer"><span class="work-type">取材・執筆</span><span class="work-arrow">→</span></div>
+    </a>
+
+    <a class="work-card reveal" href="https://mantan-web.jp/article/20260123dog00m200015000a.html" target="_blank" rel="noopener" data-cat="interview">
+      <div class="work-img">
+        
+        <span class="work-img-label">Interview</span>
+      </div>
+      <div class="work-body">
+        <p class="work-tag">インタビュー — MANTAN WEB</p>
+        <p class="work-title">超宇宙刑事ギャバン インフィニティ：主演・長田光平 変身ポーズに"昭和ギャバン"オマージュ 100年後も「カッコいい」と思える作品に</p>
+      </div>
+      <div class="work-footer"><span class="work-type">取材・執筆</span><span class="work-arrow">→</span></div>
+    </a>
+
+    <a class="work-card reveal" href="https://www.oricon.co.jp/news/2454267/" target="_blank" rel="noopener" data-cat="interview">
+      <div class="work-img">
+        
+        <span class="work-img-label">Interview</span>
+      </div>
+      <div class="work-body">
+        <p class="work-tag">インタビュー — ORICON NEWS</p>
+        <p class="work-title">磯村勇斗×オク・テギョン、国境を超えた魂の共鳴 再会でかみ締めた唯一無二の絆「僕たちはソウルメイト」</p>
+      </div>
+      <div class="work-footer"><span class="work-type">取材・執筆</span><span class="work-arrow">→</span></div>
+    </a>
+
+    <a class="work-card reveal" href="https://www.oricon.co.jp/news/2453214/" target="_blank" rel="noopener" data-cat="event">
+      <div class="work-img">
+        
+        <span class="work-img-label">Event</span>
+      </div>
+      <div class="work-body">
+        <p class="work-tag">イベント取材 — ORICON NEWS</p>
+        <p class="work-title">Mr.都市伝説・関暁夫「一番の防災は"愛"」 ペットとの同行避難を体感する『情熱ペット防災』に密着</p>
+      </div>
+      <div class="work-footer"><span class="work-type">取材・執筆</span><span class="work-arrow">→</span></div>
+    </a>
+
+    <a class="work-card reveal" href="https://www.oricon.co.jp/news/2451090/" target="_blank" rel="noopener" data-cat="interview">
+      <div class="work-img">
+        
+        <span class="work-img-label">Interview</span>
+      </div>
+      <div class="work-body">
+        <p class="work-tag">インタビュー — ORICON NEWS</p>
+        <p class="work-title">舞台『春琴抄』、茅島みずき&小栗基裕が明かす"理想の愛"は過度に干渉し合わない関係</p>
+      </div>
+      <div class="work-footer"><span class="work-type">取材・執筆</span><span class="work-arrow">→</span></div>
+    </a>
+
+    <a class="work-card reveal" href="https://www.oricon.co.jp/news/2450585/" target="_blank" rel="noopener" data-cat="interview">
+      <div class="work-img">
+        
+        <span class="work-img-label">Interview</span>
+      </div>
+      <div class="work-body">
+        <p class="work-tag">インタビュー — ORICON NEWS</p>
+        <p class="work-title">戸田恵梨香「私には何もない」恐怖と断捨離で越えた"どん底" 伊藤沙莉と共鳴する"貪欲さ"を語る Netflixシリーズ『地獄に堕ちるわよ』インタビュー</p>
+      </div>
+      <div class="work-footer"><span class="work-type">取材・執筆</span><span class="work-arrow">→</span></div>
+    </a>
+
+    <a class="work-card reveal" href="https://www.oricon.co.jp/news/2450584/" target="_blank" rel="noopener" data-cat="interview">
+      <div class="work-img">
+        
+        <span class="work-img-label">Interview</span>
+      </div>
+      <div class="work-body">
+        <p class="work-tag">インタビュー — ORICON NEWS</p>
+        <p class="work-title">『ARCO/アルコ』黒川想矢×堀越麗禾、初共演で響き合った声とリスペクト 意外な"縁"も</p>
+      </div>
+      <div class="work-footer"><span class="work-type">取材・執筆</span><span class="work-arrow">→</span></div>
+    </a>
+
+    <a class="work-card reveal" href="https://www.oricon.co.jp/news/2449664/" target="_blank" rel="noopener" data-cat="special">
+      <div class="work-img">
+        
+        <span class="work-img-label">Special</span>
+      </div>
+      <div class="work-body">
+        <p class="work-tag">特集 — ORICON NEWS</p>
+        <p class="work-title">「Anison Days Festival 2026」、全32曲の熱狂がよみがえる! 5週連続オンエアを前に"神コラボ"&圧巻のパフォーマンスの見どころをライブレポで分析</p>
+      </div>
+      <div class="work-footer"><span class="work-type">取材・執筆</span><span class="work-arrow">→</span></div>
+    </a>
+
+    <a class="work-card reveal" href="https://www.oricon.co.jp/news/2448733/" target="_blank" rel="noopener" data-cat="live">
+      <div class="work-img">
+        
+        <span class="work-img-label">Live Report</span>
+      </div>
+      <div class="work-body">
+        <p class="work-tag">ライブレポート — ORICON NEWS</p>
+        <p class="work-title">東京メルヘン倶楽部、Zepp DiverCityで魅せた集大成と新たな幕開け メジャーデビューを電撃発表【セットリスト付きライブレポ】</p>
+      </div>
+      <div class="work-footer"><span class="work-type">取材・執筆</span><span class="work-arrow">→</span></div>
+    </a>
+
+    <a class="work-card reveal" href="https://www.oricon.co.jp/news/2445682/" target="_blank" rel="noopener" data-cat="interview">
+      <div class="work-img">
+        
+        <span class="work-img-label">Interview</span>
+      </div>
+      <div class="work-body">
+        <p class="work-tag">インタビュー — ORICON NEWS</p>
+        <p class="work-title">『劇場版「暗殺教室」みんなの時間』、福山潤×渕上舞×岡本信彦×洲崎綾×逢坂良太が語る色あせない絆</p>
+      </div>
+      <div class="work-footer"><span class="work-type">取材・執筆</span><span class="work-arrow">→</span></div>
+    </a>
+
+    <a class="work-card reveal" href="https://www.oricon.co.jp/news/2444265/" target="_blank" rel="noopener" data-cat="special">
+      <div class="work-img">
+        
+        <span class="work-img-label">Special</span>
+      </div>
+      <div class="work-body">
+        <p class="work-tag">特集 — ORICON NEWS</p>
+        <p class="work-title">CHiCO with HoneyWorks、初ベスト『i BEST -Singles Collection-』に込めたアイデンティティと愛 軌跡と深化で提示する"自己紹介"と"第2期"への指針</p>
+      </div>
+      <div class="work-footer"><span class="work-type">取材・執筆</span><span class="work-arrow">→</span></div>
+    </a>
+
+    <a class="work-card reveal" href="https://www.oricon.co.jp/news/2442305/" target="_blank" rel="noopener" data-cat="event">
+      <div class="work-img">
+        
+        <span class="work-img-label">Event</span>
+      </div>
+      <div class="work-body">
+        <p class="work-tag">イベント取材 — ORICON NEWS</p>
+        <p class="work-title">矢作兼、寝かしつけ後の解放感は「超ウェルビーイング」 ビビる大木は愛娘のシール愛に完敗も「頼られているうちが幸せ」</p>
+      </div>
+      <div class="work-footer"><span class="work-type">取材・執筆</span><span class="work-arrow">→</span></div>
+    </a>
+
+    <a class="work-card reveal" href="https://www.oricon.co.jp/news/2439441/" target="_blank" rel="noopener" data-cat="live">
+      <div class="work-img">
+        
+        <span class="work-img-label">Live Report</span>
+      </div>
+      <div class="work-body">
+        <p class="work-tag">ライブレポート — ORICON NEWS</p>
+        <p class="work-title">『Anison Days Festival 2026』、森口博子&酒井ミキオほか、GRANRODEO、福山芳樹らが豪華アニソン競演！名曲の数々、カバーやコラボにファン熱狂</p>
+      </div>
+      <div class="work-footer"><span class="work-type">取材・執筆</span><span class="work-arrow">→</span></div>
+    </a>
+
+    <a class="work-card reveal" href="https://www.oricon.co.jp/news/2438831/" target="_blank" rel="noopener" data-cat="interview">
+      <div class="work-img">
+        
+        <span class="work-img-label">Interview</span>
+      </div>
+      <div class="work-body">
+        <p class="work-tag">インタビュー — ORICON NEWS</p>
+        <p class="work-title">堂本光一「転生はしたくない」今の人生を生きる意味 『転スラ』20年ぶり声優業</p>
+      </div>
+      <div class="work-footer"><span class="work-type">取材・執筆</span><span class="work-arrow">→</span></div>
+    </a>
+
+    <a class="work-card reveal" href="https://www.oricon.co.jp/news/2437860/" target="_blank" rel="noopener" data-cat="event">
+      <div class="work-img">
+        
+        <span class="work-img-label">Event</span>
+      </div>
+      <div class="work-body">
+        <p class="work-tag">イベント取材 — ORICON NEWS</p>
+        <p class="work-title">『エヴァフェス』開幕！演者ら15人集結でファン歓喜 緒方恵美は感慨「30年間ありがとう」庵野秀明は新作アニメに自信</p>
+      </div>
+      <div class="work-footer"><span class="work-type">取材・執筆</span><span class="work-arrow">→</span></div>
+    </a>
+
+    <a class="work-card reveal" href="https://www.oricon.co.jp/news/2436087/" target="_blank" rel="noopener" data-cat="interview">
+      <div class="work-img">
+        
+        <span class="work-img-label">Interview</span>
+      </div>
+      <div class="work-body">
+        <p class="work-tag">インタビュー — ORICON NEWS</p>
+        <p class="work-title">『Anison Days Festival 2026』開催記念！森口博子&酒井ミキオ&GRANRODEO&TRUEが語る、フェスへの思いと"化学反応"への期待</p>
+      </div>
+      <div class="work-footer"><span class="work-type">取材・執筆</span><span class="work-arrow">→</span></div>
+    </a>
+
+    <a class="work-card reveal" href="https://www.oricon.co.jp/special/75457/" target="_blank" rel="noopener" data-cat="special">
+      <div class="work-img">
+        
+        <span class="work-img-label">Special</span>
+      </div>
+      <div class="work-body">
+        <p class="work-tag">特集 — ORICON NEWS</p>
+        <p class="work-title">山下健二郎＆横山由依、マクドナルドで培った"チーム力"の原点 三代目JSBとAKB48に通じるチームワークの極意</p>
+      </div>
+      <div class="work-footer"><span class="work-type">取材・執筆</span><span class="work-arrow">→</span></div>
+    </a>
+
+    <a class="work-card reveal" href="https://www.oricon.co.jp/special/75003/" target="_blank" rel="noopener" data-cat="special">
+      <div class="work-img">
+        
+        <span class="work-img-label">Special</span>
+      </div>
+      <div class="work-body">
+        <p class="work-tag">特集 — ORICON NEWS</p>
+        <p class="work-title">【スター・ウォーズ】7年ぶりの劇場公開へ！ 音楽で仕掛ける"銀河系"の熱狂 アナログ盤リリースと"エモ消費"の創出</p>
+      </div>
+      <div class="work-footer"><span class="work-type">取材・執筆</span><span class="work-arrow">→</span></div>
+    </a>
+
+    <a class="work-card reveal" href="https://www.oricon.co.jp/special/74892/" target="_blank" rel="noopener" data-cat="interview">
+      <div class="work-img">
+        
+        <span class="work-img-label">Interview</span>
+      </div>
+      <div class="work-body">
+        <p class="work-tag">インタビュー — ORICON NEWS</p>
+        <p class="work-title">北山宏光、現状維持じゃないところを作っていきたい。「去年と同じことはしない」 新曲「ULTRA」は聴く人一人一人が当事者に</p>
+      </div>
+      <div class="work-footer"><span class="work-type">取材・執筆</span><span class="work-arrow">→</span></div>
+    </a>
+
+    <a class="work-card reveal" href="https://www.oricon.co.jp/special/74230/" target="_blank" rel="noopener" data-cat="special">
+      <div class="work-img">
+        
+        <span class="work-img-label">Special</span>
+      </div>
+      <div class="work-body">
+        <p class="work-tag">特集インタビュー — ORICON NEWS</p>
+        <p class="work-title">【マンガを浴びる】劇場型マンガライブ MoN Takanawa『MANGALOGUE：火の鳥』夏木マリ＆又吉直樹が語る新たなマンガ体験</p>
+      </div>
+      <div class="work-footer"><span class="work-type">取材・執筆</span><span class="work-arrow">→</span></div>
+    </a>
+
+    <a class="work-card reveal" href="https://www.oricon.co.jp/news/2429459/" target="_blank" rel="noopener" data-cat="interview">
+      <div class="work-img">
+        
+        <span class="work-img-label">Interview</span>
+      </div>
+      <div class="work-body">
+        <p class="work-tag">インタビュー — ORICON NEWS</p>
+        <p class="work-title">50年目の『俺たちの旅』中村雅俊・秋野太作・田中健・岡田奈々が語る、変わらない絆と生きることの"切なさ"</p>
+      </div>
+      <div class="work-footer"><span class="work-type">取材・執筆</span><span class="work-arrow">→</span></div>
+    </a>
+
+    <a class="work-card reveal" href="https://www.oricon.co.jp/news/2409167/" target="_blank" rel="noopener" data-cat="interview">
+      <div class="work-img">
+        
+        <span class="work-img-label">Interview</span>
+      </div>
+      <div class="work-body">
+        <p class="work-tag">インタビュー — ORICON NEWS</p>
+        <p class="work-title">高橋留美子×新垣結衣、14年ぶり再会 『らんま1/2』愛の初対談！実写ドラマで髪25センチ切った秘話、二次創作の過去</p>
+      </div>
+      <div class="work-footer"><span class="work-type">取材・執筆</span><span class="work-arrow">→</span></div>
+    </a>
+
+    <a class="work-card reveal" href="https://www.oricon.co.jp/news/2424434/" target="_blank" rel="noopener" data-cat="interview">
+      <div class="work-img">
+        
+        <span class="work-img-label">Interview</span>
+      </div>
+      <div class="work-body">
+        <p class="work-tag">インタビュー — ORICON NEWS</p>
+        <p class="work-title">ももいろクローバーZ、『Anison Days』2週連続出演で語る2025年の軌跡――ガンダムファミリー入り報告から食を愛する素顔まで</p>
+      </div>
+      <div class="work-footer"><span class="work-type">取材・執筆</span><span class="work-arrow">→</span></div>
+    </a>
+
+    <a class="work-card reveal" href="https://www.oricon.co.jp/news/2421591/" target="_blank" rel="noopener" data-cat="interview">
+      <div class="work-img">
+        
+        <span class="work-img-label">Interview</span>
+      </div>
+      <div class="work-body">
+        <p class="work-tag">インタビュー — ORICON NEWS</p>
+        <p class="work-title">奥井雅美が語るアニサマ20回目の舞台裏と盟友・森口博子との絆 氷川きよし+KIINA.から"先生"と呼ばれるように</p>
+      </div>
+      <div class="work-footer"><span class="work-type">取材・執筆</span><span class="work-arrow">→</span></div>
+    </a>
+
+    <a class="work-card reveal" href="https://e.usen.com/interview/interview-original/hiromitsukitayama-ultra.html" target="_blank" rel="noopener" data-cat="interview">
+      <div class="work-img">
+        
+        <span class="work-img-label">Interview</span>
+      </div>
+      <div class="work-body">
+        <p class="work-tag">インタビュー — USEN</p>
+        <p class="work-title">北山宏光「ULTRA」インタビュー――「生きているだけで君はULTRA」という想い／手の中に産まれた"UTA（歌）"の衝撃</p>
+      </div>
+      <div class="work-footer"><span class="work-type">取材・執筆</span><span class="work-arrow">→</span></div>
+    </a>
+
+    <a class="work-card reveal" href="https://biz-m.oricon.co.jp/article/8621/" target="_blank" rel="noopener" data-cat="live">
+      <div class="work-img">
+        
+        <span class="work-img-label">Live Report</span>
+      </div>
+      <div class="work-body">
+        <p class="work-tag">ライブレポート — ORICON BiZ online</p>
+        <p class="work-title">東京メルヘン倶楽部、Zepp DiverCityで魅せた集大成と新たな幕開け メジャーデビューを電撃発表</p>
+      </div>
+      <div class="work-footer"><span class="work-type">取材・執筆</span><span class="work-arrow">→</span></div>
+    </a>
+
+    <a class="work-card reveal" href="https://biz-m.oricon.co.jp/article/8532/" target="_blank" rel="noopener" data-cat="special">
+      <div class="work-img">
+        
+        <span class="work-img-label">Special</span>
+      </div>
+      <div class="work-body">
+        <p class="work-tag">特集 — ORICON BiZ online</p>
+        <p class="work-title">【リリース】CHiCO with HoneyWorks、初ベスト『i BEST -Singles Collection-』に込めたアイデンティティと愛</p>
+      </div>
+      <div class="work-footer"><span class="work-type">取材・執筆</span><span class="work-arrow">→</span></div>
+    </a>
+
+    <a class="work-card reveal" href="https://www.oricon.co.jp/special/68835/" target="_blank" rel="noopener" data-cat="special">
+      <div class="work-img">
+        
+        <span class="work-img-label">Special</span>
+      </div>
+      <div class="work-body">
+        <p class="work-tag">特集 — ORICON NEWS</p>
+        <p class="work-title">濱正悟×兵頭功海、スーパー戦隊俳優が弁護士×詐欺師の異色バディに サスペンスとボーイズラブの"二刀流"で描く『毒恋』</p>
+      </div>
+      <div class="work-footer"><span class="work-type">執筆</span><span class="work-arrow">→</span></div>
+    </a>
+
+    <a class="work-card reveal" href="https://mantan-web.jp/article/20251226dog00m200004000c.html" target="_blank" rel="noopener" data-cat="interview">
+      <div class="work-img">
+        
+        <span class="work-img-label">Interview</span>
+      </div>
+      <div class="work-body">
+        <p class="work-tag">インタビュー・撮影 — MANTAN WEB</p>
+        <p class="work-title">菅生新樹：母の一言で変わった"仕事観" 池井戸作品でつかんだもの</p>
+      </div>
+      <div class="work-footer"><span class="work-type">取材・執筆・撮影</span><span class="work-arrow">→</span></div>
+    </a>
+
+    <a class="work-card reveal" href="https://mantan-web.jp/article/20251103dog00m200023000c.html" target="_blank" rel="noopener" data-cat="event">
+      <div class="work-img">
+        
+        <span class="work-img-label">Event</span>
+      </div>
+      <div class="work-body">
+        <p class="work-tag">イベント取材 — MANTAN WEB</p>
+        <p class="work-title">森香澄："今年の顔"に選出 テレ東退社時の思いも明かす ヒット商品1位は「大阪・関西万博 with ミャクミャク」</p>
+      </div>
+      <div class="work-footer"><span class="work-type">取材・執筆・撮影</span><span class="work-arrow">→</span></div>
+    </a>
+
+    <a class="work-card reveal" href="https://mantan-web.jp/article/20250207dog00m200050000c.html" target="_blank" rel="noopener" data-cat="event">
+      <div class="work-img">
+        
+        <span class="work-img-label">Event</span>
+      </div>
+      <div class="work-body">
+        <p class="work-tag">イベント取材 — MANTAN WEB</p>
+        <p class="work-title">内野聖陽：出演の決め手になった大森寿美男監督の一言明かす「原作では80歳近い老人」に不安も</p>
+      </div>
+      <div class="work-footer"><span class="work-type">取材・執筆・撮影</span><span class="work-arrow">→</span></div>
+    </a>
+
+    <a class="work-card reveal" href="https://mantan-web.jp/article/20241206dog00m200086000c.html" target="_blank" rel="noopener" data-cat="interview">
+      <div class="work-img">
+        
+        <span class="work-img-label">Interview</span>
+      </div>
+      <div class="work-body">
+        <p class="work-tag">インタビュー・撮影 — MANTAN WEB</p>
+        <p class="work-title">江口洋介＆蒔田彩珠："親子"からバディーへ「忍びの家」に続いての共演 「誰かがこの町で」インタビュー</p>
+      </div>
+      <div class="work-footer"><span class="work-type">取材・執筆・撮影</span><span class="work-arrow">→</span></div>
+    </a>
+
+    <a class="work-card reveal" href="https://www.oricon.co.jp/news/2367740/" target="_blank" rel="noopener" data-cat="interview">
+      <div class="work-img">
+        
+        <span class="work-img-label">Interview</span>
+      </div>
+      <div class="work-body">
+        <p class="work-tag">インタビュー — ORICON NEWS</p>
+        <p class="work-title">原嘉孝、目黒蓮との『トリリオンゲーム』共演は「通過点」 『タイプロ』挑戦で気づいたアイドルへの思い「あきらめきれない夢」</p>
+      </div>
+      <div class="work-footer"><span class="work-type">取材・執筆</span><span class="work-arrow">→</span></div>
+    </a>
+
+    <a class="work-card reveal" href="https://www.oricon.co.jp/news/2271439/" target="_blank" rel="noopener" data-cat="live">
+      <div class="work-img">
+        
+        <span class="work-img-label">Live Report</span>
+      </div>
+      <div class="work-body">
+        <p class="work-tag">ライブレポート — ORICON NEWS</p>
+        <p class="work-title">『Anison Days Festival 2023』3年半ぶり開催 番組MC森口博子&酒井ミキオほか、オーイシマサヨシ、ももクロら"番組ファミリー"熱唱【ライブレポ&セトリ掲載】</p>
+      </div>
+      <div class="work-footer"><span class="work-type">取材・執筆</span><span class="work-arrow">→</span></div>
+    </a>
+
+    <!-- オウンドメディア・その他 -->
+    <a class="work-card reveal" href="https://ddnavi.com/" target="_blank" rel="noopener" data-cat="media">
+      <div class="work-img">
+        
+        <span class="work-img-label">Media</span>
+      </div>
+      <div class="work-body">
+        <p class="work-tag">連載 — ダ・ヴィンチWeb</p>
+        <p class="work-title">漫画家インタビュー企画の取材・執筆</p>
+      </div>
+      <div class="work-footer"><span class="work-type">取材・執筆</span><span class="work-arrow">→</span></div>
+    </a>
+
+    <a class="work-card reveal" href="https://lomico.jp/author/endo/" target="_blank" rel="noopener" data-cat="media">
+      <div class="work-img">
+        
+        <span class="work-img-label">Media</span>
+      </div>
+      <div class="work-body">
+        <p class="work-tag">連載 — LOMICO</p>
+        <p class="work-title">次に来そうなおすすめマンガを紹介するレビュー記事を連載</p>
+      </div>
+      <div class="work-footer"><span class="work-type">企画・取材・執筆</span><span class="work-arrow">→</span></div>
+    </a>
+
+    <a class="work-card reveal" href="https://my-style.ne.jp/magazine/677/" target="_blank" rel="noopener" data-cat="media">
+      <div class="work-img">
+        
+        <span class="work-img-label">Media</span>
+      </div>
+      <div class="work-body">
+        <p class="work-tag">街紹介コラム — my-style.ne.jp</p>
+        <p class="work-title">【赤羽編】東京で一人暮らし。おすすめの街はどこ？</p>
+      </div>
+      <div class="work-footer"><span class="work-type">企画・取材・執筆・撮影</span><span class="work-arrow">→</span></div>
+    </a>
+
+    <a class="work-card reveal" href="https://jp.indeed.com/career-advice" target="_blank" rel="noopener" data-cat="media">
+      <div class="work-img">
+        
+        <span class="work-img-label">Media</span>
+      </div>
+      <div class="work-body">
+        <p class="work-tag">オウンドメディア — Indeed</p>
+        <p class="work-title">Indeed キャリアアドバイス 記事執筆</p>
+      </div>
+      <div class="work-footer"><span class="work-type">執筆</span><span class="work-arrow">→</span></div>
+    </a>
+
+    <a class="work-card reveal" href="https://tanoshiiosake.jp/" target="_blank" rel="noopener" data-cat="media">
+      <div class="work-img">
+        
+        <span class="work-img-label">Media</span>
+      </div>
+      <div class="work-body">
+        <p class="work-tag">オウンドメディア — たのしいお酒</p>
+        <p class="work-title">たのしいお酒 記事執筆</p>
+      </div>
+      <div class="work-footer"><span class="work-type">執筆</span><span class="work-arrow">→</span></div>
+    </a>
+
+  </div>
+</section>
+
+<!-- PROFILE -->
+<section id="about" class="section section-border">
+  <div class="sec-header reveal"><span class="sec-label">プロフィール</span><span class="sec-en">About</span></div>
+  <div class="profile-grid">
+    <div class="profile-text reveal">
+      <h3>経歴</h3>
+      <div class="profile-career">
+        <div class="career-item">
+          <div class="career-year">キャリア初期</div>
+          <div class="career-text">編集プロダクション入社後、大手出版社発行の月刊誌の制作に従事。</div>
+        </div>
+        <div class="career-item">
+          <div class="career-year">プロダクション転職</div>
+          <div class="career-text">デスク待遇で他プロダクションに転職。週刊誌・月刊誌の編集・取材・執筆を行う傍ら、学生向けフリーマガジンを立ち上げる。</div>
+        </div>
+        <div class="career-item">
+          <div class="career-year">独立</div>
+          <div class="career-text">フリーランスの編集・ライター・スチールカメラマンとして独立。出版社との業務委託による企画・編集・取材から、オウンドメディア記事、SEO記事まで幅広く対応。現在に至る。</div>
+        </div>
+      </div>
+      <h3>主な媒体</h3>
+      <div class="profile-media-list">
+        <span class="media-pill">MANTAN WEB</span>
+        <span class="media-pill">毎日キレイ</span>
+        <span class="media-pill">ORICON NEWS</span>
+        <span class="media-pill">ORICON BiZ online</span>
+        <span class="media-pill">ダ・ヴィンチWeb</span>
+        <span class="media-pill">LOMICO</span>
+        <span class="media-pill">IT小ネタ帳</span>
+        <span class="media-pill">Indeed</span>
+        <span class="media-pill">たのしいお酒</span>
+      </div>
+    </div>
+    <div class="profile-text reveal">
+      <h3>対応できる業務</h3>
+      <ul>
+        <li>取材記事の執筆（イベント・インタビュー・簡単な撮影含む）</li>
+        <li>コラム、レビュー記事の執筆</li>
+        <li>オウンドメディア記事の執筆</li>
+        <li>ライブほかレポート記事の取材・執筆</li>
+        <li>取材・資料に基づく分析系コラム</li>
+        <li>SEO記事の執筆・リライト</li>
+        <li>著名人インタビュー取材・執筆・写真撮影</li>
+        <li>イベント・会見取材（写真撮影含む）</li>
+      </ul>
+      <h3>得意ジャンル</h3>
+      <div class="tag-cloud">
+        <span class="tag">エンタメ（ドラマ・特撮・音楽）</span>
+        <span class="tag">マンガ・アニメ・ゲーム</span>
+        <span class="tag">映画</span>
+        <span class="tag">声優</span>
+        <span class="tag">IT系</span>
+        <span class="tag">ライフハック</span>
+        <span class="tag">飲食</span>
+        <span class="tag">街紹介</span>
+      </div>
+      <p class="genre-note">上記以外のライティングもお引き受け可能ですので、お気軽にご相談いただけますと幸いです。</p>
+      <h3>稼働</h3>
+      <p class="profile-note">案件に応じてフレキシブルな対応が可能です。<br>チャットワークなどでのやり取りも対応可能です。</p>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="section section-border" style="background:#FBF9F5">
+  <div class="sec-header reveal"><span class="sec-label">経験・スキル</span><span class="sec-en">Skills</span></div>
+  <div class="skills-wrap">
+    <div class="reveal">
+      <div class="skill-group">
+        <div class="skill-group-title">経験年数</div>
+        <div class="skill-item"><span class="skill-name">編集・ディレクション</span><span class="skill-yrs">10年以上</span></div>
+        <div class="skill-item"><span class="skill-name">取材・ライティング</span><span class="skill-yrs">20年以上</span></div>
+        <div class="skill-item"><span class="skill-name">写真撮影・加工</span><span class="skill-yrs">20年以上</span></div>
+        <div class="skill-item"><span class="skill-name">広告運用</span><span class="skill-yrs">5年</span></div>
+        <div class="skill-item"><span class="skill-name">メディア運用</span><span class="skill-yrs">5年</span></div>
+        <div class="skill-item"><span class="skill-name">SEO</span><span class="skill-yrs">5年</span></div>
+        <div class="skill-item"><span class="skill-name">SNS運用</span><span class="skill-yrs">1年</span></div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">編集・執筆スキル</div>
+        <div class="skill-item"><span class="skill-name">事前調査・制作方針策定</span></div>
+        <div class="skill-item"><span class="skill-name">全体企画・構成（台割）作成</span></div>
+        <div class="skill-item"><span class="skill-name">取材・インタビュー</span></div>
+        <div class="skill-item"><span class="skill-name">執筆・校正</span></div>
+        <div class="skill-item"><span class="skill-name">全体・ページレイアウト</span></div>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="skill-group">
+        <div class="skill-group-title">写真・動画スキル</div>
+        <div class="skill-item"><span class="skill-name">写真撮影</span></div>
+        <div class="skill-item"><span class="skill-name">基本加工（切り抜き・リサイズ等）</span></div>
+        <div class="skill-item"><span class="skill-name">クリエイティブ加工（レタッチ・合成）</span></div>
+        <div class="skill-item"><span class="skill-name">シナリオ・台本作成</span></div>
+        <div class="skill-item"><span class="skill-name">香盤表作成</span></div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">経験したコンテンツ種別</div>
+        <div class="tag-cloud">
+          <span class="tag">著名人インタビュー</span>
+          <span class="tag">ライブレポート</span>
+          <span class="tag">イベント取材</span>
+          <span class="tag">SEO記事</span>
+          <span class="tag">オウンドメディア</span>
+          <span class="tag">コラム・レビュー</span>
+          <span class="tag">SNSテキスト</span>
+          <span class="tag">雑誌</span>
+          <span class="tag">書籍</span>
+          <span class="tag">街紹介</span>
+          <span class="tag">プレスリリース</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section">
+  <div class="sec-header reveal"><span class="sec-label">お問い合わせ</span><span class="sec-en">Contact</span></div>
+  <div class="contact-inner reveal">
+    <p>取材・インタビュー・ライブレポート・オウンドメディア記事などのご依頼・ご相談はメールにてお気軽にどうぞ。丁寧なコミュニケーションを心がけており、ご連絡後すぐに対応できる体制を整えております。</p>
+    <a class="contact-email" href="mailto:snow.gift.endo@gmail.com">snow.gift.endo@gmail.com</a>
+    <div class="contact-row">
+      <a class="contact-link" href="https://x.com/snow_summer7" target="_blank" rel="noopener">X (Twitter) @snow_summer7</a>
+      <a class="contact-link" href="https://www.facebook.com/masaki.endo.338" target="_blank" rel="noopener">Facebook</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="footer-name">遠藤 政樹 — Writer &amp; Photographer, Tokyo</span>
+  <span class="footer-copy">© 2026 Masaki Endo. All rights reserved.</span>
+</footer>
+
+<script>
+const io = new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')})},{threshold:0.08})
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el))
+
+const btns = document.querySelectorAll('.filter-btn')
+const cards = document.querySelectorAll('.works-grid .work-card')
+const divider = document.querySelector('.works-divider')
+btns.forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    btns.forEach(b=>b.classList.remove('active'))
+    btn.classList.add('active')
+    const f = btn.dataset.filter
+    cards.forEach(card=>{
+      const cat = card.dataset.cat
+      const show = f==='all' || cat===f
+      card.classList.toggle('hidden', !show)
+      if(show){card.classList.remove('in');setTimeout(()=>card.classList.add('in'),30)}
+    })
+    if(divider){
+      const anyOther=[...cards].some(c=>!c.dataset.official&&!c.classList.contains('hidden')&&c.dataset.cat)
+      divider.classList.toggle('hidden',!anyOther)
+    }
+  })
+})
+</script>
+</body>
+</html>
