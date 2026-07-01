@@ -296,6 +296,14 @@ footer{background:var(--ink);color:var(--paper);padding:2rem 2.5rem;
       <span class="works-divider-label">掲載記事一覧</span>
       <span class="works-divider-line"></span>
     </div>
+    <a class="work-card reveal" href="https://www.oricon.co.jp/news/2464791/" target="_blank" rel="noopener" data-cat="interview">
+      <div class="work-img cat-interview"><span class="work-img-label">Interview</span></div>
+      <div class="work-body">
+        <p class="work-tag">インタビュー — ORICON NEWS</p>
+        <p class="work-title">『ガス人間』小栗旬&広瀬すず&林遣都が圧倒的スケールに驚き UTAはモデル経験を初演技に生かす</p>
+      </div>
+      <div class="work-footer"><span class="work-type">取材・執筆</span><span class="work-arrow">→</span></div>
+    </a>
     <a class="work-card reveal" href="https://www.oricon.co.jp/special/75655/" target="_blank" rel="noopener" data-cat="interview">
       <div class="work-img cat-interview"><span class="work-img-label">Interview</span></div>
       <div class="work-body">
@@ -934,27 +942,39 @@ document.querySelectorAll('.reveal').forEach(el=>io.observe(el))
 const btns = document.querySelectorAll('.filter-btn')
 const cards = document.querySelectorAll('.works-grid .work-card')
 const dividers = document.querySelectorAll('.works-divider')
+const grid = document.querySelector('.works-grid')
 
 btns.forEach(btn=>{
   btn.addEventListener('click',()=>{
     btns.forEach(b=>b.classList.remove('active'))
     btn.classList.add('active')
     const f = btn.dataset.filter
+
     cards.forEach(card=>{
       const cat = card.dataset.cat
       const show = f==='all' || cat===f
       card.classList.toggle('hidden', !show)
       if(show){card.classList.remove('in');setTimeout(()=>card.classList.add('in'),30)}
     })
-    // 各dividerは、その後ろに表示中カードがあるかで表示/非表示を判定
+
+    // ライブレポタブ：第二章を先頭に移動
+    if(f==='live'){
+      const dainiSho = [...grid.children].find(el=>el.href && el.href.includes('54232'))
+      if(dainiSho) grid.insertBefore(dainiSho, grid.firstChild)
+    }
+    // すべてタブに戻す：40年の感謝を先頭に（物理順に戻す）
+    if(f==='all'){
+      const kansha = [...grid.children].find(el=>el.href && el.href.includes('50333'))
+      if(kansha) grid.insertBefore(kansha, grid.firstChild)
+    }
+
     dividers.forEach(div=>{
       let el = div.nextElementSibling
       let hasVisible = false
       while(el){
         if(el.classList && el.classList.contains('works-divider')) break
         if(el.classList && el.classList.contains('work-card') && !el.classList.contains('hidden')){
-          hasVisible = true
-          break
+          hasVisible = true; break
         }
         el = el.nextElementSibling
       }
