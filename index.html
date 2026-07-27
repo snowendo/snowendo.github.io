@@ -38,16 +38,25 @@ nav{position:sticky;top:0;z-index:100;background:var(--ink);color:var(--paper);
   border-left:2px solid var(--rule);padding-left:1.2rem;margin-bottom:2rem;}
 
 /* Page nav */
-.hero-page-nav{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:2.5rem}
-.page-nav-btn{display:flex;align-items:center;gap:.75rem;border:1px solid var(--rule);background:var(--card-bg);
-  padding:.75rem 1.4rem;color:var(--ink);text-decoration:none;
-  transition:border-color .25s,background .25s,transform .2s,box-shadow .25s;font-family:var(--sans);}
-.page-nav-btn:hover{border-color:var(--red);background:#fff;transform:translateY(-2px);box-shadow:0 6px 20px rgba(26,26,24,.08);}
-.page-nav-btn:hover .pnb-arrow{transform:translateX(3px)}
-.pnb-icon{font-size:1.1rem;line-height:1;color:var(--red);flex-shrink:0;}
-.pnb-en{display:block;font-size:.78rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);line-height:1.2;}
-.pnb-ja{display:block;font-size:.65rem;letter-spacing:.04em;color:var(--dim);margin-top:.15rem;line-height:1;}
-.pnb-arrow{font-size:.75rem;color:var(--red);margin-left:.25rem;transition:transform .25s;flex-shrink:0;}
+.hero-page-nav{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin-top:2.5rem;max-width:1200px;background:var(--rule);border:1px solid var(--rule);}
+.page-nav-btn{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:.3rem;background:var(--card-bg);
+  padding:1rem .75rem;color:var(--ink);text-decoration:none;
+  transition:background .2s,color .2s;font-family:var(--sans);
+  position:relative;
+}
+.page-nav-btn::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:2px;
+  background:var(--red);transform:scaleX(0);transition:transform .25s;
+}
+.page-nav-btn:hover{background:#fff;}
+.page-nav-btn:hover::after{transform:scaleX(1);}
+.page-nav-btn:hover .pnb-en{color:var(--red);}
+.pnb-icon{display:none;}
+.pnb-en{display:block;font-size:.72rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);line-height:1.2;transition:color .2s;}
+.pnb-ja{display:block;font-size:.62rem;letter-spacing:.04em;color:var(--dim);margin-top:.2rem;line-height:1;}
+.pnb-arrow{display:none;}
 
 /* SECTION */
 .section{padding:5rem 2.5rem;max-width:1200px;margin:0 auto}
