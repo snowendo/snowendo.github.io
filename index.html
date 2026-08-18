@@ -259,11 +259,19 @@ footer{background:var(--ink);color:var(--paper);padding:2rem 2.5rem;
   <div class="works-grid">
 
     <!-- ═══ OFFICIAL ═══ -->
-    <a class="work-card official-card reveal" href="https://news.kingrecords.co.jp/2026/01/50333/" target="_blank" rel="noopener" data-cat="live" data-official="true">
+    <a class="work-card official-card reveal" href="https://news.kingrecords.co.jp/2026/08/57929/" target="_blank" rel="noopener" data-cat="live" data-official="true">
       <div class="work-img cat-live"><div class="official-badge">Official</div><span class="work-img-label">Live Report</span></div>
       <div class="work-body">
         <p class="work-tag">オフィシャルライブレポート — King Records</p>
-        <p class="work-title">森口博子 40年の感謝と愛を歌の花束に――"全方位型コンサート"で示したエンターテイナーとしての真髄</p>
+        <p class="work-title">森口博子 初単独オーケストラコンサートで40周年ツアー全公演を完走、到達した「最強で最高」の音楽人生</p>
+      </div>
+      <div class="work-footer"><span class="work-type">取材・執筆</span><span class="work-arrow">→</span></div>
+    </a>
+    <a class="work-card official-card reveal" href="https://news.kingrecords.co.jp/2026/05/54232/" target="_blank" rel="noopener" data-cat="live" data-official="true">
+      <div class="work-img cat-live"><div class="official-badge">Official</div><span class="work-img-label">Live Report</span></div>
+      <div class="work-body">
+        <p class="work-tag">オフィシャルライブレポート — King Records</p>
+        <p class="work-title">40周年ツアー「第二章」完結 武部聡志との魂を抱きしめる至高のアンサンブルで魅せた、歌声とピアノだけの"真剣勝負"</p>
       </div>
       <div class="work-footer"><span class="work-type">取材・執筆</span><span class="work-arrow">→</span></div>
     </a>
@@ -275,11 +283,11 @@ footer{background:var(--ink);color:var(--paper);padding:2rem 2.5rem;
       </div>
       <div class="work-footer"><span class="work-type">取材・執筆</span><span class="work-arrow">→</span></div>
     </a>
-    <a class="work-card official-card reveal" href="https://news.kingrecords.co.jp/2026/05/54232/" target="_blank" rel="noopener" data-cat="live" data-official="true">
+    <a class="work-card official-card reveal" href="https://news.kingrecords.co.jp/2026/01/50333/" target="_blank" rel="noopener" data-cat="live" data-official="true">
       <div class="work-img cat-live"><div class="official-badge">Official</div><span class="work-img-label">Live Report</span></div>
       <div class="work-body">
         <p class="work-tag">オフィシャルライブレポート — King Records</p>
-        <p class="work-title">40周年ツアー「第二章」完結 武部聡志との魂を抱きしめる至高のアンサンブルで魅せた、歌声とピアノだけの"真剣勝負"</p>
+        <p class="work-title">森口博子 40年の感謝と愛を歌の花束に――"全方位型コンサート"で示したエンターテイナーとしての真髄</p>
       </div>
       <div class="work-footer"><span class="work-type">取材・執筆</span><span class="work-arrow">→</span></div>
     </a>
@@ -1102,16 +1110,8 @@ btns.forEach(btn=>{
       if(show){card.classList.remove('in');setTimeout(()=>card.classList.add('in'),30)}
     })
 
-    // ライブレポタブ：第二章を先頭に移動
-    if(f==='live'){
-      const dainiSho = [...grid.children].find(el=>el.href && el.href.includes('54232'))
-      if(dainiSho) grid.insertBefore(dainiSho, grid.firstChild)
-    }
-    // すべてタブに戻す：40年の感謝を先頭に（物理順に戻す）
-    if(f==='all'){
-      const kansha = [...grid.children].find(el=>el.href && el.href.includes('50333'))
-      if(kansha) grid.insertBefore(kansha, grid.firstChild)
-    }
+    // ライブレポタブ：liveのオフィシャルはすでに日付順なのでDOM順のまま表示（追加不要）
+    // すべてタブに戻す際も不要（物理順が正しい日付順のため）
 
     dividers.forEach(div=>{
       let el = div.nextElementSibling
